@@ -2,6 +2,7 @@ class ship {
   constructor(length, hits = 0) {
     this.length = length;
     this.hits = hits;
+    this.cells = [];
   }
 
   hit() {
@@ -15,4 +16,4 @@ class ship {
   }
 }
 
-module.exports = ship;
+export { ship };
