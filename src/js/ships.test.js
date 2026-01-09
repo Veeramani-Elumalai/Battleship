@@ -1,19 +1,31 @@
-import Ship from './ships';
+import Ship from './ships.js';
 
-const battleship = new Ship(4);
+let battleship;
+
+beforeEach(() => {
+  battleship = new Ship(4);
+});
 
 test('ship object creation', () => {
-  expect(new Ship(4)).toMatchObject({ length: 4, hits: 0 , isSunk : false});
+  expect(battleship.length).toBe(4);
+  expect(battleship.hits).toBe(0);
 });
 
-test('adding hits to the ship', () => {
-  expect(battleship).toMatchObject({ length: 4, hits: 0 , isSunk : false});
+test('hit() increases hits', () => {
+  battleship.hit();
+  expect(battleship.hits).toBe(1);
 });
 
-test('testing sunk logic', () => {
+test('isSunk() returns false when ship is not sunk', () => {
+  battleship.hit();
+  battleship.hit();
+  expect(battleship.isSunk()).toBe(false);
+});
+
+test('isSunk() returns true when hits equal length', () => {
   battleship.hit();
   battleship.hit();
   battleship.hit();
   battleship.hit();
-  expect(battleship.isSunk).toBe(true);
+  expect(battleship.isSunk()).toBe(true);
 });
