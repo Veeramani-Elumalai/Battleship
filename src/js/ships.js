@@ -1,19 +1,20 @@
-class ship {
-  constructor(length, hits = 0) {
+export default class Ship {
+  constructor(length) {
     this.length = length;
-    this.hits = hits;
-    this.cells = [];
+    this.hits = 0;
+    this.isSunk = false;
   }
 
   hit() {
-    if(this.length >= this.hits) return this.sunk();
-    return this.hits += 1;
+    if (this.isSunk) return;
+    this.hits += 1;
+    if (this.hits >= this.length) this.isSunk = true;
   }
 
   sunk() {
-    this.length >= this.hits;
-    return 'Ship is sunking';
+    if(this.hits >= this.length){
+      return this.isSunk = true;
+    }
   }
 }
 
-export { ship };
