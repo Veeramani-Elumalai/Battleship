@@ -32,10 +32,12 @@ This will open the game in your browser automatically. Pretty straightforward!
 ### Gameplay
 
 **Step 1: Choose Your Mode**
+
 - **Play vs Computer**: Quick game against the AI
 - **Two Player**: Pass the device back and forth with a friend
 
 **Step 2: Place Your Ships**
+
 - Drag each ship from the ship yard onto your board
 - Use the rotate button to change ship orientation
 - You need to place all 5 ships:
@@ -46,6 +48,7 @@ This will open the game in your browser automatically. Pretty straightforward!
   - Destroyer (2 cells)
 
 **Step 3: Battle!**
+
 - Click on the enemy board to attack
 - Red cells with 💥 = Hit!
 - Light blue cells with ○ = Miss
@@ -75,11 +78,13 @@ src/
 I used Webpack for bundling, which makes development pretty smooth. The dev server has hot reload, so changes show up immediately.
 
 **Run tests:**
+
 ```bash
 npm test
 ```
 
 **Build for production:**
+
 ```bash
 npm run build
 ```
